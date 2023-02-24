@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\QuizGame\QuizManager.cs" />
     <Compile Include="Assets\Scripts\QuizGame\QuestionsAndAnswers.cs" />
+    <Compile Include="Assets\Scripts\QuizGame\AnswerScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
