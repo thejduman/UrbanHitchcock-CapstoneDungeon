@@ -31,7 +31,7 @@ public class QuizManager : MonoBehaviour
             options[i].GetComponent<AnswerScript>().isCorrect = false;
             options[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = QnA[currentQuestion].Answers[i];
 
-            if (QnA[currentQuestion].CorrectAnswer == i+1)
+            if (QnA[currentQuestion].CorrectAnswer == i)
             {
                 options[i].GetComponent<AnswerScript>().isCorrect = true;
             }
@@ -41,11 +41,19 @@ public class QuizManager : MonoBehaviour
     //set the question
     void generateQuestion()
     {
-        currentQuestion = Random.Range(0, QnA.Count); //pick a random question from the list
+        if(QnA.Count > 0)
+        {
+            currentQuestion = Random.Range(0, QnA.Count); //pick a random question from the list
 
-        //set up the quiz
-        QuestionText.text = QnA[currentQuestion].Question;
-        SetAnswers();
+            //set up the quiz
+            QuestionText.text = QnA[currentQuestion].Question;
+            SetAnswers();
+        }
+        else
+        {
+            Debug.Log("Out of questions");
+        }
+        
 
     }
 }
