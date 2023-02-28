@@ -21,6 +21,12 @@ public class Player : MonoBehaviour
         float directionY = Input.GetAxisRaw("Vertical");
 
         playerDirection = new Vector2(directionX, directionY).normalized;
+
+        //if(Input.GetKeyDown(KeyCode.M) == true)
+        //{
+        //    
+        //}
+
     }
 
     // Called once per physics frame
