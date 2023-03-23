@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     public float playerSpeed;
     private Rigidbody2D rb;
+
+    public static bool NearInteractable = false;
     private Vector2 playerDirection;
 
     // Start is called before the first frame update
@@ -21,6 +23,14 @@ public class Player : MonoBehaviour
         float directionY = Input.GetAxisRaw("Vertical");
 
         playerDirection = new Vector2(directionX, directionY).normalized;
+
+        if( Input.GetKeyDown(KeyCode.I))
+        {
+            if(NearInteractable == true)
+            {
+                
+            }
+        }
 
         //if(Input.GetKeyDown(KeyCode.M) == true)
         //{
