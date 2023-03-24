@@ -17,6 +17,9 @@ public class QuizManager : MonoBehaviour
     public TMPro.TextMeshProUGUI CorrectText; //on screen text for the number of correct answers
     public TMPro.TextMeshProUGUI IncorrectText; //on screen text for the number of incorrect answers
 
+    public GameObject StatusPanel;
+    public TMPro.TextMeshProUGUI StatusText;
+
     //runs at start of game
     private void Start()
     {
@@ -28,16 +31,18 @@ public class QuizManager : MonoBehaviour
     public void correct()
     {
         correctans++;
+        StatusText.text = "Correct Answer";
+        StatusPanel.SetActive(true);
         QnA.RemoveAt(currentQuestion);
-        generateQuestion();
     }
 
     //when a question is answered incorrectly
     public void incorrect()
     {
         incorrectans++;
+        StatusText.text = "Incorrect Answer";
+        StatusPanel.SetActive(true);
         QnA.RemoveAt(currentQuestion);
-        generateQuestion();
     }
 
     //set the answer text on the buttons
@@ -56,12 +61,13 @@ public class QuizManager : MonoBehaviour
     }
 
     //set the question. runs after a question is answered
-    void generateQuestion()
+    public void generateQuestion()
     {
         CorrectText.text = "Correct: " + correctans;
         IncorrectText.text = "Incorrect: " + incorrectans;
-        
-        if(QnA.Count > 0)
+        StatusPanel.SetActive(false);
+
+        if (QnA.Count > 0)
         {
             currentQuestion = Random.Range(0, QnA.Count); //pick a random question from the list
 
@@ -72,6 +78,8 @@ public class QuizManager : MonoBehaviour
         else
         {
             Debug.Log("Out of questions");
+            StatusText.text = "Out of Questions";
+            StatusPanel.SetActive(true);
         }
         
 
