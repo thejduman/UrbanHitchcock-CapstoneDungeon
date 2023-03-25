@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private DialogueUI dialogueUI;
+    public DialogueUI DialogueUI => dialogueUI;
+    public IInteractable Interactable { get; set; }
+    
     public float playerSpeed;
     private Rigidbody2D rb;
 
@@ -24,11 +28,11 @@ public class Player : MonoBehaviour
 
         playerDirection = new Vector2(directionX, directionY).normalized;
 
-        if( Input.GetKeyDown(KeyCode.I))
+        if( Input.GetKeyDown(KeyCode.E))
         {
-            if(NearInteractable == true)
+            if(Interactable != null)
             {
-                
+                Interactable.Interact(this);
             }
         }
 
