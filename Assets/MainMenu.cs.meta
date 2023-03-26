@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/QuizGame/AnswerScript.cs.meta
-guid: 3bdc5fc85bc393d43a7f964076e99caf
-========
-guid: 18512de97af45a44cb68b55e0bb2629d
->>>>>>>> brian:Assets/Main Menu.cs.meta
+guid: 2642beb87d9b8f34a86ba4d9747634b1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
