@@ -8,7 +8,7 @@ public class DialogueUI : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] private TMP_Text textLabel;    //reference to text label
-    [SerializeField] private DialogueObject testDialogue;
+    //[SerializeField] private DialogueObject testDialogue;
     [SerializeField] private GameObject dialogueBox;
     private TypewriterEffect typewriterEffect;
     private ResponseHandler responseHandler;
@@ -19,7 +19,7 @@ public class DialogueUI : MonoBehaviour
         typewriterEffect = GetComponent<TypewriterEffect>();
         responseHandler = GetComponent<ResponseHandler>();
         CloseDialogueBox();
-        ShowDialogue(testDialogue);
+        //ShowDialogue(testDialogue);
     }
 
     public void ShowDialogue(DialogueObject dialogueObject)

@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class DialogueActivator : MonoBehaviour, IInteractable
 {
@@ -26,5 +28,6 @@ public class DialogueActivator : MonoBehaviour, IInteractable
     public void Interact(Player player)
     {
         player.DialogueUI.ShowDialogue(dialogueObject);
+       
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AnswerScript : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class AnswerScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("Change scenes"); //will transition back to the overworld
+            SceneManager.LoadScene("SampleScene"); //will transition back to the overworld
         }
         
     }
