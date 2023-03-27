@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private DialogueUI dialogueUI;
+    public DialogueUI DialogueUI => dialogueUI;
+    public IInteractable Interactable { get; set; }
+    
     public float playerSpeed;
     private Rigidbody2D rb;
+
+    public static bool NearInteractable = false;
     private Vector2 playerDirection;
 
     // Start is called before the first frame update
@@ -21,6 +27,20 @@ public class Player : MonoBehaviour
         float directionY = Input.GetAxisRaw("Vertical");
 
         playerDirection = new Vector2(directionX, directionY).normalized;
+
+        if( Input.GetKeyDown(KeyCode.E))
+        {
+            if(Interactable != null)
+            {
+                Interactable.Interact(this);
+            }
+        }
+
+        //if(Input.GetKeyDown(KeyCode.M) == true)
+        //{
+        //    
+        //}
+
     }
 
     // Called once per physics frame

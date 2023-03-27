@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/QuizGame/QuestionsAndAnswers.cs.meta
+guid: 112f9abcaaaf65f4e9d271d97f05a9db
+========
+guid: f9c2cbf8b59c9924780f12e3c44365ba
+>>>>>>>> brian:Assets/PauseMenu.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

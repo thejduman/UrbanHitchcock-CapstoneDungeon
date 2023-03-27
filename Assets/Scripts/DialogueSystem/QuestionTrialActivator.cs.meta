@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/QuizGame/QuizManager.cs.meta
+guid: 139acc3b0962d2443b32a667cf5eac17
+========
+guid: f486c58fb3364354893d451b177da8aa
+>>>>>>>> brian:Assets/Scripts/Quizlet.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
