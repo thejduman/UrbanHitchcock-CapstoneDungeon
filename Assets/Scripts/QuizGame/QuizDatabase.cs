@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Data;
 using Mono.Data.Sqlite;
+using System.IO;
 
 public class QuizDatabase : MonoBehaviour
 {
@@ -10,8 +11,9 @@ public class QuizDatabase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CreateDB();
-        AddQuestion("Sample Question", "Test 1", "Test 2", "Test 3", "Test 4", 1);
+        OpenCSV();
+        //CreateDB();
+        //AddQuestion("Sample Question", "Test 1", "Test 2", "Test 3", "Test 4", 1);
         DisplayQuestions();
     }
 
@@ -72,6 +74,20 @@ public class QuizDatabase : MonoBehaviour
                 }
             }
             connection.Close();
+        }
+    }
+
+    public void OpenCSV()
+    {
+        CreateDB();
+        var lines = File.ReadAllLines("Assets\\Scripts\\QuizGame\\SampleQuestions.csv");
+        foreach (var line in lines)
+        {
+            var question = line.Split(',');
+            //Debug.Log(question[0] + " " + question[1] + " " + question[2] + " " + question[3] + " " + question[4] + " " + question[5]);
+            AddQuestion(question[0], question[1], question[2], question[3], question[4], int.Parse(question[5]));
+
+            //Debug.Log(question[0] + " " + question[1]);
         }
     }
 }
