@@ -1,9 +1,13 @@
+using Mono.Data.Sqlite;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class QuizManager : MonoBehaviour
+public class QuizManager : QuizDatabase
 {
     public List<QuestionsAndAnswers> QnA; //list of questions
     public GameObject[] options; //the answer buttons
@@ -20,9 +24,15 @@ public class QuizManager : MonoBehaviour
     public GameObject StatusPanel;
     public TMPro.TextMeshProUGUI StatusText;
 
+    
+    public QuestionsAndAnswers questions;
+
     //runs at start of game
     private void Start()
     {
+        CreateDB();
+        OpenCSV();
+        SetQnA();
         totalQuestions = QnA.Count;
         generateQuestion();
     }
@@ -83,5 +93,38 @@ public class QuizManager : MonoBehaviour
         }
         
 
+    }
+
+    public void SetQnA()
+    {
+        QnA.Clear();
+        using (var connection = new SqliteConnection(dbName))
+        {
+            connection.Open();
+
+            string[] tempArray = { "One", "Two", "Three", "Four" };
+            string temp = "Test Question";
+
+            using (var command = connection.CreateCommand())
+            {
+                //select what you want to get
+                //this just sets the parameters of what will be returned
+                command.CommandText = "SELECT * FROM QuestionsAndAnswers;";
+
+                //iterate through the recordset that was returned from the statement above
+                using (IDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        temp = reader["Question"] as string;
+                        questions.question = temp;
+                        Debug.Log(questions.question);
+                    }
+                    reader.Close();
+                }
+            }
+            connection.Close();
+
+        }
     }
 }

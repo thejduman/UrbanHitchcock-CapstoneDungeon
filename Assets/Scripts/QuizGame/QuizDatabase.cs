@@ -6,18 +6,9 @@ using System.IO;
 public class QuizDatabase : MonoBehaviour
 {
     //the name of the database
-    private string dbName = "URI=file:QuizGame.db";
+    public string dbName = "URI=file:QuizGame.db";
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        OpenCSV();
-        //CreateDB();
-        //AddQuestion("Sample Question", "Test 1", "Test 2", "Test 3", "Test 4", 1);
-        DisplayQuestions();
-    }
-
-    public void CreateDB()
+    protected virtual void CreateDB()
     {
         //create the db connection
         using (var connection = new SqliteConnection(dbName))
@@ -35,7 +26,7 @@ public class QuizDatabase : MonoBehaviour
         }
     }
 
-    public void AddQuestion(string question, string answer1, string answer2, string answer3, string answer4, int correctAnswer)
+    protected virtual void AddQuestion(string question, string answer1, string answer2, string answer3, string answer4, int correctAnswer)
     {
         using (var connection = new SqliteConnection(dbName))
         {
@@ -51,7 +42,7 @@ public class QuizDatabase : MonoBehaviour
         }
     }
 
-    public void DisplayQuestions()
+    protected virtual void DisplayQuestions()
     {
         using (var connection = new SqliteConnection(dbName))
         {
@@ -77,7 +68,7 @@ public class QuizDatabase : MonoBehaviour
         }
     }
 
-    public void OpenCSV()
+    protected virtual void OpenCSV()
     {
         CreateDB();
         var lines = File.ReadAllLines("Assets\\Scripts\\QuizGame\\SampleQuestions.csv");
