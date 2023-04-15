@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class DialogueActivator : MonoBehaviour, IInteractable
+public class DialogueActivator : MonoBehaviour, IInteractable 
 {
     [SerializeField] private DialogueObject dialogueObject;
 
@@ -30,4 +30,5 @@ public class DialogueActivator : MonoBehaviour, IInteractable
         player.DialogueUI.ShowDialogue(dialogueObject);
        
     }
+
 }

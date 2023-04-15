@@ -19,6 +19,7 @@ public class QuizManager : MonoBehaviour
 
     public GameObject StatusPanel;
     public TMPro.TextMeshProUGUI StatusText;
+    public QuestionsAndAnswers Questions;
 
     //runs at start of game
     private void Start()
@@ -84,4 +85,12 @@ public class QuizManager : MonoBehaviour
         
 
     }
+
+    public void SetQnA()
+    {
+        Questions.question = "Liam";
+        Debug.Log(Questions.question);
+    }
+    
+
 }
