@@ -52,7 +52,7 @@ public class PauseMenu : MonoBehaviour
     public void OpenJournal()
     {
         //SceneManager.LoadScene("Menu"); Meant to call variable when completed
-        Debug.Log("Openning Journal...");
+        Debug.Log("Opening Journal...");
         inventoryUI.Show();
     }
 

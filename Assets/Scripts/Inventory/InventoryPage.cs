@@ -11,7 +11,25 @@ public class InventoryPage : MonoBehaviour
     [SerializeField]
     private RectTransform contentPanel;
 
-    List<InventoryItem> listOfItems = new List<InventoryItem>(); 
+    [SerializeField]
+    private InventoryDescription itemDescription;
+
+    [SerializeField]
+    private MouseFollower mouseFollower;
+
+    List<InventoryItem> listOfItems = new List<InventoryItem>();
+
+    public event Action<int> OnDescriptionRequested, OnItemActionRequested, OnStartDragging;
+    public event Action<int, int> OnSwapItems;
+
+    private int currentlyDraggedItemIndex = -1;
+
+    private void Awake()
+    {
+        Hide();
+        mouseFollower.Toggle(false);
+        itemDescription.ResetDescription();
+    }
 
     //create item prefabs for all items in inventory
     public void InitializeInventory(int inventorysize)
@@ -31,40 +49,97 @@ public class InventoryPage : MonoBehaviour
         }
     }
 
-    private void HandleShowItemActions(InventoryItem obj)
+    public void UpdateData(int itemIndex, Sprite itemImage, int itemQuantity)
+    {
+        if (listOfItems.Count > itemIndex)
+        {
+            listOfItems[itemIndex].SetData(itemImage, itemQuantity);
+        }
+    }
+    
+    private void HandleShowItemActions(InventoryItem inventoryItemUI)
     {
         throw new NotImplementedException();
     }
 
-    private void HandleEndDrag(InventoryItem obj)
+    //remove an item from the drag state
+    private void HandleEndDrag(InventoryItem inventoryItemUI)
     {
-        throw new NotImplementedException();
+        ResetDraggedItem();
     }
 
-    private void HandleSwap(InventoryItem obj)
+    //logic for swapping an item in the drag state with another item
+    private void HandleSwap(InventoryItem inventoryItemUI)
     {
-        throw new NotImplementedException();
+        int index = listOfItems.IndexOf(inventoryItemUI);
+        if (index == -1)
+        {
+            return;
+        }
+        OnSwapItems?.Invoke(currentlyDraggedItemIndex, index);
     }
 
-    private void HandleBeginDrag(InventoryItem obj)
+    
+    //reset properties when item exits drag state
+    private void ResetDraggedItem()
     {
-        throw new NotImplementedException();
+        mouseFollower.Toggle(false);
+        currentlyDraggedItemIndex = -1;
     }
 
-    private void HandleItemSelection(InventoryItem obj)
+    //change an item to the drag state
+    private void HandleBeginDrag(InventoryItem inventoryItemUI)
     {
-        Debug.Log(obj.name);
+        int index = listOfItems.IndexOf(inventoryItemUI);
+        if (index == -1)
+            return;
+        currentlyDraggedItemIndex = index;
+        HandleItemSelection(inventoryItemUI);
+        OnStartDragging?.Invoke(index);
+       
+    }
+
+    //re-create the dragged item
+    public void CreateDraggedItem(Sprite sprite, int quantity)
+    {
+        mouseFollower.Toggle(true);
+        mouseFollower.SetData(sprite, quantity);
+    }
+
+    //set the description when an item is selected
+    private void HandleItemSelection(InventoryItem inventoryItemUI)
+    {
+        int index = listOfItems.IndexOf(inventoryItemUI);
+        if (index == -1)
+            return;
+        OnDescriptionRequested?.Invoke(index);
     }
 
     //show the inventory
     public void Show()
     {
         gameObject.SetActive(true);
+        ResetSelection();
+    }
+
+    private void ResetSelection()
+    {
+        itemDescription.ResetDescription();
+        DeselectAllItems();
+    }
+
+    private void DeselectAllItems()
+    {
+        foreach (InventoryItem item in listOfItems)
+        {
+            item.Deselect();
+        }
     }
 
     //hide the inventory
     public void Hide()
     {
         gameObject.SetActive(false);
+        ResetDraggedItem();
     }
 }

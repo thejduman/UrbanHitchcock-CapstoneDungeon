@@ -6,7 +6,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventoryItem : MonoBehaviour
+public class InventoryItem : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, 
+    IEndDragHandler, IDropHandler, IDragHandler
 {
     [SerializeField]
     private Image itemImage;
@@ -56,29 +57,8 @@ public class InventoryItem : MonoBehaviour
     }
 
     //these methods invoke the actions which are defined in InventoryPage
-    public void OnBeginDrag()
+    public void OnPointerClick(PointerEventData pointerData)
     {
-        if (empty)
-            return;
-        OnItemBeginDrag?.Invoke(this);
-    }
-
-    public void OnDrop()
-    {
-        OnItemDroppedOn?.Invoke(this);
-    }
-
-    public void OnEndDrag()
-    {
-        OnItemEndDrag?.Invoke(this);
-    }
-
-    //check that mouse was clicked before calling the event
-    public void OnPointerClick(BaseEventData data)
-    {
-        if (empty)
-            return;
-        PointerEventData pointerData = (PointerEventData)data;
         if (pointerData.button == PointerEventData.InputButton.Right)
         {
             OnRightMouseBtnClick?.Invoke(this);
@@ -89,4 +69,25 @@ public class InventoryItem : MonoBehaviour
         }
     }
 
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (empty)
+            return;
+        OnItemBeginDrag?.Invoke(this);
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        OnItemEndDrag?.Invoke(this);
+    }
+
+    public void OnDrop(PointerEventData eventData)
+    {
+        OnItemDroppedOn?.Invoke(this);
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        throw new NotImplementedException();
+    }
 }
