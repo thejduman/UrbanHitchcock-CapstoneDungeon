@@ -81,6 +81,24 @@ public class QuizDatabase : MonoBehaviour
             //Debug.Log(question[0] + " " + question[1]);
         }
     }
+
+    protected virtual void ClearDB()
+    {
+        using (var connection = new SqliteConnection(dbName))
+        {
+            connection.Open();
+
+            using (var command = connection.CreateCommand())
+            {
+                //syntax: INSERT INTO tablename (field1, field2) VALUES ('value1', 'value2');"
+                command.CommandText = "DELETE FROM QuestionsAndAnswers";
+                command.ExecuteNonQuery();
+            }
+            connection.Close();
+        }
+    }
+
+
 }
 
   

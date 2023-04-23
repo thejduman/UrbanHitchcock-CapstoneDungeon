@@ -7,6 +7,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
 public class QuizManager : QuizDatabase
 {
     public List<QuestionsAndAnswers> QnA; //list of questions
@@ -32,9 +33,11 @@ public class QuizManager : QuizDatabase
     {
         CreateDB();
         OpenCSV();
+        //DisplayQuestions();
         SetQnA();
         totalQuestions = QnA.Count;
         generateQuestion();
+        ClearDB();
     }
 
     //when a auestion is answered correctly
@@ -83,6 +86,7 @@ public class QuizManager : QuizDatabase
 
             //set up the quiz
             QuestionText.text = QnA[currentQuestion].Question;
+            
             SetAnswers();
         }
         else
@@ -102,8 +106,11 @@ public class QuizManager : QuizDatabase
         {
             connection.Open();
 
-            string[] tempArray = { "One", "Two", "Three", "Four" };
+            string[] tempArray = {"One", "Two", "Three", "Four" };
             string temp = "Test Question";
+            int tempNum = 0;
+            
+
 
             using (var command = connection.CreateCommand())
             {
@@ -116,11 +123,40 @@ public class QuizManager : QuizDatabase
                 {
                     while (reader.Read())
                     {
+                        questions = new QuestionsAndAnswers();
+                        tempArray = new string[4];
+
                         temp = reader["Question"] as string;
                         questions.question = temp;
-                        Debug.Log(questions.question);
+
+                        
+                        tempArray[0] = reader["Answer1"] as string;
+                        tempArray[1] = reader["Answer2"] as string;
+                        tempArray[2] = reader["Answer3"] as string;
+                        tempArray[3] = reader["Answer4"] as string;
+
+                        
+                        questions.answers = tempArray;
+                        
+                        
+                        
+                        temp = reader["CorrectAnswer"].ToString();
+                        tempNum = int.Parse(temp);
+                        questions.correctanswer = tempNum;
+                        
+
+                        QnA.Add(questions);
+
+                        
+
                     }
+                    
+
+
                     reader.Close();
+
+                    
+
                 }
             }
             connection.Close();

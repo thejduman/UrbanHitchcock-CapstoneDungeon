@@ -18,4 +18,10 @@ public class QuestionsAndAnswers
         set { Answers = value; }
     }
 
+    public int correctanswer
+    {
+        get {return CorrectAnswer; }
+        set { CorrectAnswer = value; }
+    }
+
 }
