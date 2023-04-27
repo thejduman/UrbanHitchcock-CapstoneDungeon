@@ -10,8 +10,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
-    [SerializeField]
-    private InventoryPage inventoryUI;
+    public InventoryController inventoryController;
 
     // Update is called once per frame
     void Update()
@@ -53,7 +52,8 @@ public class PauseMenu : MonoBehaviour
     {
         //SceneManager.LoadScene("Menu"); Meant to call variable when completed
         Debug.Log("Opening Journal...");
-        inventoryUI.Show();
+        inventoryController = FindObjectOfType<InventoryController>();
+        inventoryController.OpenInventory();
     }
 
     public void OpenMap()

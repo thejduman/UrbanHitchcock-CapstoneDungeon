@@ -649,9 +649,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749e32e453a8f6147ada3a91896c73bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  mainCam: {fileID: 0}
-  item: {fileID: 0}
+  canvas: {fileID: 1834418558}
+  mainCam: {fileID: 519420031}
+  item: {fileID: 256972433}
 --- !u!114 &167400781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -827,6 +827,17 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &256972433 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 23591487376499546, guid: 0923b3185e6a7814784f212bc0f9d99c, type: 3}
+  m_PrefabInstance: {fileID: 1809002961}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256972427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3752804707005c8429b9d505d51e75dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &513385286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,7 +1458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 2044216271}
-  inventorySize: 30
+  inventoryData: {fileID: 11400000, guid: ed2fb690e3fc6894391fb608baea16b5, type: 2}
 --- !u!1 &870509708
 GameObject:
   m_ObjectHideFlags: 0
@@ -3266,7 +3277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 2098017529}
-  inventoryUI: {fileID: 2044216271}
+  inventoryController: {fileID: 0}
 --- !u!114 &1834418561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3964,6 +3975,10 @@ PrefabInstance:
       propertyPath: quantity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 246667385163225558, guid: ef02744aee137f64c86191d5c5b4cc61, type: 3}
+      propertyPath: itemPrefab
+      value: 
+      objectReference: {fileID: 256972433}
     - target: {fileID: 246667385163225558, guid: ef02744aee137f64c86191d5c5b4cc61, type: 3}
       propertyPath: description
       value: This is a sample journal entry.

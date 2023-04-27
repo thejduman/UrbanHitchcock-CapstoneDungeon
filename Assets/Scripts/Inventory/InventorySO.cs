@@ -52,6 +52,12 @@ public class InventorySO : ScriptableObject
         }
         return returnValue;
     }
+
+    //get an item from the backend
+    public InventoryItemModel GetItemAt(int itemIndex)
+    {
+        return inventoryItems[itemIndex];
+    }
 }
 
 

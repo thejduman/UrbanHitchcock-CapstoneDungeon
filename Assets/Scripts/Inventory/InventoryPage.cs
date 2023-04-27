@@ -85,6 +85,7 @@ public class InventoryPage : MonoBehaviour
     {
         mouseFollower.Toggle(false);
         currentlyDraggedItemIndex = -1;
+        Debug.Log("Dragged item reset");
     }
 
     //change an item to the drag state
@@ -93,6 +94,7 @@ public class InventoryPage : MonoBehaviour
         int index = listOfItems.IndexOf(inventoryItemUI);
         if (index == -1)
             return;
+        Debug.Log("Item is in drag state");
         currentlyDraggedItemIndex = index;
         HandleItemSelection(inventoryItemUI);
         OnStartDragging?.Invoke(index);
@@ -104,6 +106,7 @@ public class InventoryPage : MonoBehaviour
     {
         mouseFollower.Toggle(true);
         mouseFollower.SetData(sprite, quantity);
+        Debug.Log("Dragged item was re-created");
     }
 
     //set the description when an item is selected
@@ -113,6 +116,7 @@ public class InventoryPage : MonoBehaviour
         if (index == -1)
             return;
         OnDescriptionRequested?.Invoke(index);
+        Debug.Log("Item was selected");
     }
 
     //show the inventory
@@ -141,5 +145,13 @@ public class InventoryPage : MonoBehaviour
     {
         gameObject.SetActive(false);
         ResetDraggedItem();
+    }
+
+    //update description in the UI based on data from the backend
+    internal void UpdateDescription(int itemIndex, Sprite itemImage, string name, string description)
+    {
+        itemDescription.SetDescription(itemImage, name, description);
+        DeselectAllItems();
+        listOfItems[itemIndex].Select();
     }
 }
