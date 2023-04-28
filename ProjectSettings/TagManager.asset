@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
-  tags:
-  - HasDialogue
-  - QuestionTrial
-=======
   tags: []
->>>>>>> 941265cb12f07c5934e88dbec31fda10bac042e4
   layers:
   - Default
   - TransparentFX

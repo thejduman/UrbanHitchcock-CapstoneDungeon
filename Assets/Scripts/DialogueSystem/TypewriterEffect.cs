@@ -9,6 +9,12 @@ public class TypewriterEffect : MonoBehaviour
     
     [SerializeField] private float typewriterSpeed = 50f;
 
+    private readonly Dictionary<HashSet<char>, float> punctuations = new Dictionary<HashSet<char>, float>()
+    {
+        {new HashSet<char>(){'.', '!', '?'}, 0.6f},
+        {new HashSet<char>(){',', ';', ':'}, 0.3f},
+    };
+
     public Coroutine Run(string textToType, TMP_Text textLabel)
     {
         return StartCoroutine(routine:TypeText(textToType, textLabel));
@@ -23,6 +29,7 @@ public class TypewriterEffect : MonoBehaviour
 
         while (charIndex < textToType.Length)
         {
+            
             t += Time.deltaTime * typewriterSpeed;
             charIndex = Mathf.FloorToInt(t);
             charIndex = Mathf.Clamp(charIndex, 0, textToType.Length);
@@ -34,7 +41,6 @@ public class TypewriterEffect : MonoBehaviour
 
         textLabel.text = textToType;
     }
-    
     /*void Start()
     {
         
