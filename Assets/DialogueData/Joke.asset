@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db9e7b7108b3264eb566a500d0eb1fa, type: 3}
+  m_Name: Joke
+  m_EditorClassIdentifier: 
+  dialogue:
+  - 'This is a game silly, of course we can!
+
+    But really, do you want to pick
+    me up?'
+  responses:
+  - responseText: Yeah!
+    dialogueObject: {fileID: 11400000, guid: 0559a1ba6cd948346bf34cf22469acc5, type: 2}
+  - responseText: No...
+    dialogueObject: {fileID: 11400000, guid: 901e0e38feebed24bad5a19aaa9ca830, type: 2}
