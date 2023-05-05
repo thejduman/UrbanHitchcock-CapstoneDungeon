@@ -306,6 +306,8 @@ GameObject:
   - component: {fileID: 98040326}
   - component: {fileID: 98040328}
   - component: {fileID: 98040329}
+  - component: {fileID: 98040331}
+  - component: {fileID: 98040330}
   m_Layer: 0
   m_Name: Bird
   m_TagString: HasDialogue
@@ -395,7 +397,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.5999997
+  m_Radius: 3.6
 --- !u!114 &98040329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,6 +411,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: d68f494481d1204428eadb8890ff6593, type: 2}
+--- !u!50 &98040330
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98040325}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!58 &98040331
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98040325}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.6
 --- !u!1 &202625355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1058,6 @@ GameObject:
   - component: {fileID: 850791649}
   - component: {fileID: 850791648}
   - component: {fileID: 850791652}
-  - component: {fileID: 850791653}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1049,7 +1087,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850791647}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1155,18 +1193,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 6}
   m_EdgeRadius: 0
---- !u!114 &850791653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850791647}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28086ff1f505eb347b0a278469774f6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &870509708
 GameObject:
   m_ObjectHideFlags: 0
@@ -3053,6 +3079,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994955411}
   m_CullTransparentMesh: 1
+--- !u!1001 &2030574471
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4602984236032500840, guid: bddee1499c457fe43a769b48696a64b3, type: 3}
+      propertyPath: m_Name
+      value: Journal 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103573119979499834, guid: bddee1499c457fe43a769b48696a64b3, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103573119979499834, guid: bddee1499c457fe43a769b48696a64b3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.2235
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103573119979499834, guid: bddee1499c457fe43a769b48696a64b3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.4744
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103573119979499834, guid: bddee1499c457fe43a769b48696a64b3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103573119979499834, guid: bddee1499c457fe43a769b48696a64b3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103573119979499834, guid: bddee1499c457fe43a769b48696a64b3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103573119979499834, guid: bddee1499c457fe43a769b48696a64b3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103573119979499834, guid: bddee1499c457fe43a769b48696a64b3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103573119979499834, guid: bddee1499c457fe43a769b48696a64b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103573119979499834, guid: bddee1499c457fe43a769b48696a64b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5103573119979499834, guid: bddee1499c457fe43a769b48696a64b3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bddee1499c457fe43a769b48696a64b3, type: 3}
 --- !u!1 &2030833956
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,6 +3150,8 @@ GameObject:
   - component: {fileID: 2030833961}
   - component: {fileID: 2030833962}
   - component: {fileID: 2030833957}
+  - component: {fileID: 2030833964}
+  - component: {fileID: 2030833963}
   m_Layer: 0
   m_Name: Circle
   m_TagString: QuestionTrial
@@ -3206,6 +3291,49 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &2030833963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030833956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087235d5361e78f458a4b747d572cc04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: 70537a9c4fdd1be4780c3c930dba6aba, type: 2}
+  events:
+  - name: Enter Game
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2030833960}
+          m_TargetAssemblyTypeName: QuestionTrialActivator, Assembly-CSharp
+          m_MethodName: Interact
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 850791648}
+            m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &2030833964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030833956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a9ceaea12e1a54397c65992442a329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: 70537a9c4fdd1be4780c3c930dba6aba, type: 2}
 --- !u!1 &2050445595
 GameObject:
   m_ObjectHideFlags: 0

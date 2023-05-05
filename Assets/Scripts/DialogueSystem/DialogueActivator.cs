@@ -2,9 +2,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class DialogueActivator : MonoBehaviour, IInteractable
+public class DialogueActivator : MonoBehaviour, IInteractable 
 {
     [SerializeField] private DialogueObject dialogueObject;
+
+    public void UpdateDialogueObject(DialogueObject dialogueObject)
+    {
+        this.dialogueObject = dialogueObject;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -27,7 +33,13 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 
     public void Interact(Player player)
     {
+        if(TryGetComponent(out DialogueResponseEvents responseEvents) && responseEvents.DialogueObject == dialogueObject)
+        {
+            player.DialogueUI.AddResponseEvents(responseEvents.Events);
+        }
+
         player.DialogueUI.ShowDialogue(dialogueObject);
        
     }
+
 }
