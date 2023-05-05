@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class QuestionTrialActivator : MonoBehaviour, IInteractable
+public class QuestionTrialActivator : QuizDatabase, IInteractable
 {
-    public string csvPath;
-    private QuizDatabase qdb;
+    public String csvPath;
+    //private QuizDatabase qdb;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -32,7 +31,10 @@ public class QuestionTrialActivator : MonoBehaviour, IInteractable
     public void Interact(Player player)
     {
         //Debug.Log("Change scene");
-        qdb.OpenCSV(csvPath);
+        //qdb.OpenCSV(csvPath);
+        CreateDB();
+        ClearDB();
+        OpenCSV(csvPath);
         SceneManager.LoadScene("QuizGame");
     }
 }

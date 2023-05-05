@@ -3150,7 +3150,6 @@ GameObject:
   - component: {fileID: 2030833961}
   - component: {fileID: 2030833962}
   - component: {fileID: 2030833957}
-  - component: {fileID: 2030833964}
   - component: {fileID: 2030833963}
   m_Layer: 0
   m_Name: Circle
@@ -3254,7 +3253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 139acc3b0962d2443b32a667cf5eac17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csvPath: Assets//Scripts//QuizGame//Dungeon1.csv
+  dbName: URI=file:QuizGame.db
+  csvPath: Assets//Scripts//QuizGame//Dungeon2.csv
 --- !u!58 &2030833961
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3301,40 +3301,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2030833956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 087235d5361e78f458a4b747d572cc04, type: 3}
+  m_Script: {fileID: 11500000, guid: b741fbdc0c68d544c8f27d35fc9bd5b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: 70537a9c4fdd1be4780c3c930dba6aba, type: 2}
-  events:
-  - name: Enter Game
-    onPickedResponse:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2030833960}
-          m_TargetAssemblyTypeName: QuestionTrialActivator, Assembly-CSharp
-          m_MethodName: Interact
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 850791648}
-            m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &2030833964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2030833956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a9ceaea12e1a54397c65992442a329, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: 70537a9c4fdd1be4780c3c930dba6aba, type: 2}
+  dbName: URI=file:QuizGame.db
 --- !u!1 &2050445595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3768,11 +3738,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1132345935861824410, guid: 5ea0ff5332d71c545a93be67ae92edb1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -204
       objectReference: {fileID: 0}
     - target: {fileID: 1132345935861824410, guid: 5ea0ff5332d71c545a93be67ae92edb1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 369
       objectReference: {fileID: 0}
     - target: {fileID: 1132345935861824410, guid: 5ea0ff5332d71c545a93be67ae92edb1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

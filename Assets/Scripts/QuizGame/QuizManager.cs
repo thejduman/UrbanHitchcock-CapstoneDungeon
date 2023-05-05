@@ -31,13 +31,13 @@ public class QuizManager : QuizDatabase
     //runs at start of game
     private void Start()
     {
-        CreateDB();
+        //CreateDB();
+        //ClearDB();
         //OpenCSV(csvPath);
         //DisplayQuestions();
         SetQnA();
         totalQuestions = QnA.Count;
         generateQuestion();
-        ClearDB();
     }
 
     //when a auestion is answered correctly
