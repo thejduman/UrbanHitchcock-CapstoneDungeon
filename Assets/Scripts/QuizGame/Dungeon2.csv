@@ -1,0 +1,10 @@
+"Also referred to as single-key encryption, the universal technique for providing confidentiality for transmitted or stored data is _______________________ .",Symmetric encryption,Public key encryption,Hash function,Stream cipher,0
+__________ is a procedure that allows communicating parties to verify that received or stored messages are authentic.,Message integrity,Message authentication,Hash function,Symmetric encryption,1
+"A _________________ processes the input elements continuously, producing output one element at a time.",Stream cipher,Block cipher,Digital signature,Hash function,0
+"If the only form of attack that could be made on an encryption algorithm is brute-force, then the way to counter such attacks would be to __________ .",Use less keys,Use shorter keys,Digital signature,Use longer keys,3
+The ________________ algorithm takes the ciphertext and the secret key and produces the original plaintext.,Decoding,Decryption,Message authentication,Ciphertext,2
+The two criteria used to validate that a sequence of numbers is random are independence and _________ .,Uniform distribution,Stream cipher,Data rate shift,Skewed distribution,0
+A __________ is to try every possible key on a piece of ciphertext until an intelligible translation into plaintext is obtained.,Dictionary attack,Cryptanalytic attack,Block cipher,Brute-force attack,3
+A _________________ attack exploits the characteristics of the algorithm to attempt to deduce a specific plaintext or to deduce the key being used.,Cryptanalytic,Brute-force,Transposition,Dictionary,0
+__________ is the scrambled message produced as output.,Plaintext,Decryption,Ciphertext,Block cipher,2
+"The purpose of a __________ is to produce a ""fingerprint"" of a file, message, or other block of data.",Block cipher,Hash function,Message authentication,Encryption,1
