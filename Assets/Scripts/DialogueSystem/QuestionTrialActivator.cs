@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class QuestionTrialActivator : MonoBehaviour, IInteractable
 {
+    public string csvPath;
+    private QuizDatabase qdb;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && other.TryGetComponent(out Player player)) 
@@ -28,7 +31,8 @@ public class QuestionTrialActivator : MonoBehaviour, IInteractable
 
     public void Interact(Player player)
     {
-        Debug.Log("Change scene");
+        //Debug.Log("Change scene");
+        qdb.OpenCSV(csvPath);
         SceneManager.LoadScene("QuizGame");
     }
 }

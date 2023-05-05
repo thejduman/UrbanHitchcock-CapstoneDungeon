@@ -32,7 +32,7 @@ public class QuizManager : QuizDatabase
     private void Start()
     {
         CreateDB();
-        OpenCSV();
+        //OpenCSV(csvPath);
         //DisplayQuestions();
         SetQnA();
         totalQuestions = QnA.Count;

@@ -18,7 +18,7 @@ public class QuizDatabase : MonoBehaviour
             //set up an object to allow db control
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "CREATE TABLE IF NOT EXISTS QuestionsAndAnswers (Question VARCHAR(120), Answer1 VARCHAR(40), Answer2 VARCHAR(40), Answer3 VARCHAR(40), Answer4 VARCHAR(40), CorrectAnswer INT);";
+                command.CommandText = "CREATE TABLE IF NOT EXISTS QuestionsAndAnswers (Question VARCHAR(200), Answer1 VARCHAR(40), Answer2 VARCHAR(40), Answer3 VARCHAR(40), Answer4 VARCHAR(40), CorrectAnswer INT);";
                 command.ExecuteNonQuery();
             }
 
@@ -68,10 +68,10 @@ public class QuizDatabase : MonoBehaviour
         }
     }
 
-    protected virtual void OpenCSV()
+    public void OpenCSV(string filepath)
     {
         CreateDB();
-        var lines = File.ReadAllLines("Assets\\Scripts\\QuizGame\\SampleQuestions.csv");
+        var lines = File.ReadAllLines(filepath);
         foreach (var line in lines)
         {
             var question = line.Split(',');
