@@ -74,9 +74,9 @@ public class QuizDatabase : MonoBehaviour
         var lines = File.ReadAllLines(filepath);
         foreach (var line in lines)
         {
-            var question = line.Split(',');
-            //Debug.Log(question[0] + " " + question[1] + " " + question[2] + " " + question[3] + " " + question[4] + " " + question[5]);
-            AddQuestion(question[0], question[1], question[2], question[3], question[4], int.Parse(question[5]));
+            var question = line.Split(';');
+            Debug.Log("[" + question[0] + "]   [" + question[1] + "]   [" + question[2] + "]   [" + question[3] + "]   [" + question[4] + "]   [" + question[5] + "]");
+            //AddQuestion(question[0], question[1], question[2], question[3], question[4], int.Parse(question[5]));
 
             //Debug.Log(question[0] + " " + question[1]);
         }

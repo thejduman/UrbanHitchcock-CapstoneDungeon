@@ -3150,7 +3150,6 @@ GameObject:
   - component: {fileID: 2030833961}
   - component: {fileID: 2030833962}
   - component: {fileID: 2030833957}
-  - component: {fileID: 2030833963}
   m_Layer: 0
   m_Name: Circle
   m_TagString: QuestionTrial
@@ -3292,19 +3291,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &2030833963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2030833956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b741fbdc0c68d544c8f27d35fc9bd5b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dbName: URI=file:QuizGame.db
 --- !u!1 &2050445595
 GameObject:
   m_ObjectHideFlags: 0
