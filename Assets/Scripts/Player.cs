@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     
     public float playerSpeed;
     private Rigidbody2D rb;
+    public Animator animator;
 
     public static bool NearInteractable = false;
     private Vector2 playerDirection;
@@ -28,7 +29,11 @@ public class Player : MonoBehaviour
 
         playerDirection = new Vector2(directionX, directionY).normalized;
 
-        if( Input.GetKeyDown(KeyCode.E))
+        animator.SetFloat("Horizontal", playerDirection.x);
+        animator.SetFloat("Vertical", playerDirection.y);
+        animator.SetFloat("Speed", playerDirection.sqrMagnitude);
+
+        if ( Input.GetKeyDown(KeyCode.E))
         {
             if(Interactable != null)
             {
