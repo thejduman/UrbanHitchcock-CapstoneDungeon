@@ -1,10 +1,10 @@
-"A __________ is directed at the user file at the host where passwords, token passcodes, or biometric templates are stored.",Replay attack,Host attack,Denial-of-service attack,Client attack,1
-Each individual who is to be included in the database of authorized users must first be __________ in the system.,Verified,Enrolled,Tokens,Identified,1
-A __________ strategy is one in which the system periodically runs its own password cracker to find guessable passwords.,Password cracker,Reactive password checking,Proactive password checking,Stream cipher,1
-Objects that a user possesses for the purpose of user authentication are called ________,Kerberos,Backup,Botnets,Tokens,3
-A __________ authentication system attempts to authenticate an individual based on his or her unique physical characteristics.,Identification,Biometric,Tokens,Password,1
-A _________ attack attempts to disable a user authentication service by flooding the service with numerous authentication attempts.,Denial-of-service,Replay,Host,Virus,0
-An authentication process consists of the _________ step and the verification step.,Authorization,Internalization,Authentication,Identification,3
-A __________ attack involves an adversary repeating a previously captured user response.,Replay,Smurf,Spyware,Denial-of-service,0
-A __________ is a password guessing program.,Client attack,Password cracker,Host attack,Denial-of-service attack,2
-The most common means of human-to-human identification are __________.,Retinal patterns,Static biometrics,Facial characteristics,Data integrity,2
+A __________ is directed at the user file at the host where passwords, token passcodes, or biometric templates are stored.;Replay attack;Host attack;Denial-of-service attack;Client attack;1
+Each individual who is to be included in the database of authorized users must first be __________ in the system.;Verified;Enrolled;Tokens;Identified;1
+A __________ strategy is one in which the system periodically runs its own password cracker to find guessable passwords.;Password cracker;Reactive password checking;Proactive password checking;Stream cipher;1
+Objects that a user possesses for the purpose of user authentication are called ________;Kerberos;Backup;Botnets;Tokens;3
+A __________ authentication system attempts to authenticate an individual based on his or her unique physical characteristics.;Identification;Biometric;Tokens;Password;1
+A _________ attack attempts to disable a user authentication service by flooding the service with numerous authentication attempts.;Denial-of-service;Replay;Host;Virus;0
+An authentication process consists of the _________ step and the verification step.;Authorization;Internalization;Authentication;Identification;3
+A __________ attack involves an adversary repeating a previously captured user response.;Replay;Smurf;Spyware;Denial-of-service;0
+A __________ is a password guessing program.;Client attack;Password cracker;Host attack;Denial-of-service attack;2
+The most common means of human-to-human identification are __________.;Retinal patterns;Static biometrics;Facial characteristics;Data integrity;2
