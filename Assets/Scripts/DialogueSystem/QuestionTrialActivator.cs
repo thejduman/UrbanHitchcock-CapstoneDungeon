@@ -35,6 +35,6 @@ public class QuestionTrialActivator : QuizDatabase, IInteractable
         CreateDB();
         ClearDB();
         OpenCSV(csvPath);
-        SceneManager.LoadScene("QuizGame");
+        GameObject.FindWithTag("SceneSwitcher").GetComponent<SceneChanger>().LoadScene("QuizGame");
     }
 }

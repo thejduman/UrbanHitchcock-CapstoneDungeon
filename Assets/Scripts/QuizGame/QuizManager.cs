@@ -6,7 +6,7 @@ using System.Data;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class QuizManager : QuizDatabase
 {
@@ -17,6 +17,7 @@ public class QuizManager : QuizDatabase
     int totalQuestions = 0; //number of questions in the array
     public int correctans; //number of times a question is answered correctly
     public int incorrectans; //number of times a question is answered incorrectly
+    public bool isFail = false;
 
     public TMPro.TextMeshProUGUI QuestionText; //game object for the question text
     public TMPro.TextMeshProUGUI CorrectText; //on screen text for the number of correct answers
@@ -58,6 +59,21 @@ public class QuizManager : QuizDatabase
         QnA.RemoveAt(currentQuestion);
     }
 
+    public void PassingGrade()
+    {
+        Debug.Log("You passed!");
+        StatusText.text = "You passed!";
+        StatusPanel.SetActive(true);
+    }
+
+    public void FailingGrade()
+    {
+        Debug.Log("You failed...");
+        isFail = true;
+        StatusText.text = "You failed...";
+        StatusPanel.SetActive(true);
+    }
+
     //set the answer text on the buttons
     void SetAnswers()
     {
@@ -92,8 +108,6 @@ public class QuizManager : QuizDatabase
         else
         {
             Debug.Log("Out of questions");
-            StatusText.text = "Out of Questions";
-            StatusPanel.SetActive(true);
         }
         
 

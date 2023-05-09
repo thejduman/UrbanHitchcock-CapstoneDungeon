@@ -7,6 +7,7 @@ public class AnswerScript : MonoBehaviour
 {
     
     public bool isCorrect = false;
+    public bool isFinished = false;
     public QuizManager quizManager;
     
     //when an answer is clicked
@@ -27,13 +28,30 @@ public class AnswerScript : MonoBehaviour
     //when the continue button on the pop-up is clicked
     public void Continue() 
     {
-        if (quizManager.QnA.Count > 0) 
+        if (!isFinished)
         {
-            quizManager.generateQuestion();
+            if (quizManager.QnA.Count > 0 && quizManager.incorrectans < 4)
+            {
+                quizManager.generateQuestion();
+            }
+            else
+            {
+                if (quizManager.correctans >= 6 && quizManager.incorrectans < 4)
+                {
+                    quizManager.PassingGrade();
+                    isFinished = true;
+                }
+                else if (quizManager.incorrectans >= 4)
+                {
+                    quizManager.FailingGrade();
+                    isFinished = true;
+                }
+
+            }
         }
         else
         {
-            SceneManager.LoadScene("SampleScene"); //will transition back to the overworld
+            GameObject.FindWithTag("SceneSwitcher").GetComponent<SceneChanger>().PreviousScene();
         }
         
     }
