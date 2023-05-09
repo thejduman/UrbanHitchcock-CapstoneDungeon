@@ -10,6 +10,8 @@ public class InventorySlot : MonoBehaviour
     public TextMeshProUGUI labelText;
     public TextMeshProUGUI stackSizeText;
 
+    private int tracker;
+
     public void ClearSlot()
     {
         icon.enabled = false;
@@ -28,6 +30,7 @@ public class InventorySlot : MonoBehaviour
         icon.enabled = true;
         labelText.enabled = true;
         stackSizeText.enabled = true;
+        
 
         icon.sprite = item.itemData.icon;
         labelText.text = item.itemData.displayName;

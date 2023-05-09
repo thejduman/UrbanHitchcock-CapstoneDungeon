@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Test Journal
   icon: {fileID: 21300000, guid: 973905b20e880304fa5869c09e50e9a0, type: 3}
+  information: This is me testing out if things are working

@@ -161,8 +161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6667264771714456275}
   - component: {fileID: 5335172763581186815}
-  - component: {fileID: 7492331241593489215}
-  - component: {fileID: 7680271804309579348}
+  - component: {fileID: 309808743080586094}
   m_Layer: 5
   m_Name: Journal Info
   m_TagString: Untagged
@@ -199,7 +198,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6907275339388988229}
   m_CullTransparentMesh: 1
---- !u!114 &7492331241593489215
+--- !u!114 &309808743080586094
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,19 +228,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7680271804309579348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6907275339388988229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abc23c2554062f24ab07c9791e4cc9d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infoText: {fileID: 1883822125654340242}
-  infoBox: {fileID: 6907275339388988229}
-  IsOpen: 1
-  objectTag: Slots

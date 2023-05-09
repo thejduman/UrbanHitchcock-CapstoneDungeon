@@ -5,16 +5,18 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public GameObject slotPrefab;
-    public List<InventorySlot> inventorySlots = new List<InventorySlot>(13);
+    public List<InventorySlot> inventorySlots = new List<InventorySlot>(22);
+
+    //GameObject inventoryMenu = Resources.Load("OBJECTS/INVENTORYPANEL") as GameObject;
 
     private void OnEnable()
     {
-        Inventory.OnInventoryChange += DrawInventory;
+        Inventory.OnInventoryChange += UpdateInventorySlot;
     }
 
     private void OnDisable()
     {
-        Inventory.OnInventoryChange -= DrawInventory;
+        Inventory.OnInventoryChange -= UpdateInventorySlot;
     }
 
     void ResetInventory()
@@ -23,16 +25,16 @@ public class InventoryManager : MonoBehaviour
         {
             Destroy(childTransform.gameObject);
         }
-        inventorySlots = new List<InventorySlot>(13);
+        inventorySlots = new List<InventorySlot>(22);
     }
 
     void DrawInventory(List<InventoryItem> inventory)
     {
         ResetInventory();
 
-        for (int i = 0; i< inventory.Capacity; i++)
+        for (int i = 0; i< inventorySlots.Capacity; i++)
         {
-            CreateInventorySlot();
+            CreateInventorySlot(i);
         }
 
         for (int i = 0; i < inventory.Count; i++)
@@ -41,9 +43,10 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    void CreateInventorySlot()
+    void CreateInventorySlot(int num)
     {
         GameObject newSlot = Instantiate(slotPrefab);
+        newSlot.name = "Slot" + num;
         newSlot.transform.SetParent(transform, false);
 
         InventorySlot newSlotComponent = newSlot.GetComponent<InventorySlot>();
@@ -51,4 +54,33 @@ public class InventoryManager : MonoBehaviour
 
         inventorySlots.Add(newSlotComponent);
     }
+
+    void UpdateInventorySlot(List<InventoryItem> inventory)
+    {
+        inventorySlots = new List<InventorySlot>(22);
+        for (int i = 0; i< inventorySlots.Capacity; i++)
+        {
+            GameObject Slot;
+            if(i == 0)
+            {
+                 Slot = GameObject.Find("Slot");
+            }
+            else
+            {
+                 Slot = GameObject.Find("Slot (" + i + ")");
+            }
+            InventorySlot newSlotComponent = Slot.GetComponent<InventorySlot>();
+            newSlotComponent.ClearSlot();
+            inventorySlots.Add(newSlotComponent);         
+
+        }
+
+        
+
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            inventorySlots[i].DrawSlot(inventory[i]);
+        }
+    }
 }
+

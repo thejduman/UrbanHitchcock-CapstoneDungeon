@@ -9,47 +9,61 @@ public class InventoryInfo : MonoBehaviour
 
     [SerializeField] private TMP_Text infoText; 
 
-    [SerializeField] private GameObject infoBox;
+    [SerializeField] GameObject infoBox;
 
-    private InventoryManager inventoryManager;
+    private Inventory inventory;
 
     private ItemData itemData;
-
-    public bool IsOpen = false;
-
-    public string objectTag = "Slots";
-
+    private GameObject journalBox; // it WILL(from code) be instantiated object from prefab
     
 
-    
+    void Start() 
+    {
+    }
+
+    void Update()
+    {
+
+    }
 
     void RemoveInfo()
     {
         infoText.text = string.Empty;
     }
 
-    void SetInfo()
+    void SetInfo(int index)
     {
-        inventoryManager = GetComponent<InventoryManager>();
-        TMP_Text tempText = Instantiate(inventoryManager.inventorySlots[0].labelText);
-        infoText.text = tempText.text;
-    }
-
-    public void ShowInfo()
-    {
-        Debug.Log("Am I being clicked");
-        if(IsOpen == false)
+        inventory = GameObject.FindWithTag("Inventory").GetComponent<Inventory>();
+        if(index < inventory.inventory.Count)
         {
-            IsOpen = true;
-            infoBox.SetActive(true);
-            
-            //SetInfo();
+            infoText.text = inventory.inventory[index].itemData.information;
         }
         else
         {
-            IsOpen = false;
+            infoText.text = "This Slot is empty";
+        }
+    }
+
+    public void whenButtonClicked()
+    {
+
+    }
+
+    public void ShowInfo(int index)
+    {
+        Debug.Log("Am I being clicked");
+
+        if(infoBox.activeInHierarchy == false)
+        {
+            Debug.Log("If stated being read?");
+            infoBox.SetActive(true);
+            
+            SetInfo(index);
+        }
+        else
+        {
+            RemoveInfo();
             infoBox.SetActive(false);
-            //RemoveInfo();
         }
     }
 
