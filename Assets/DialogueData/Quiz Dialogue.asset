@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Quiz Dialogue
   m_EditorClassIdentifier: 
   dialogue:
+  - You must get at least 6 questions right to pass the quiz game. If you get 4 questions
+    wrong, you will fail.
   - Are you ready to begin the quiz game?
   responses:
   - responseText: Yes
