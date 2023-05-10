@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Journal 2
   icon: {fileID: 21300000, guid: 973905b20e880304fa5869c09e50e9a0, type: 3}
-  information: Testing out if things be working
+  information: Confidentiality measures are designed to prevent sensitive information
+    from unauthorized access attempts. It is common for data to be categorized according
+    to the amount and type of damage that could be done if it fell into the wrong
+    hands. More or less stringent measures can then be implemented according to those
+    categories.

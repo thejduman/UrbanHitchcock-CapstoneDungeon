@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d328143e12da7b40a0aee2635e71592, type: 3}
-  m_Name: Journal 1
+  m_Name: Journal 4
   m_EditorClassIdentifier: 
-  displayName: Journal 1
+  displayName: Journal 4
   icon: {fileID: 21300000, guid: 973905b20e880304fa5869c09e50e9a0, type: 3}
-  information: Confidentiality, integrity and availability, also known as the CIA
-    triad, is a model designed to guide policies for information security within
-    an organization.
+  information: Availability means information should be consistently and readily
+    accessible for authorized parties. This involves properly maintaining hardware
+    and technical infrastructure and systems that hold and display the information.

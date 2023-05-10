@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d328143e12da7b40a0aee2635e71592, type: 3}
+  m_Name: Journal 11
+  m_EditorClassIdentifier: 
+  displayName: Journal 11
+  icon: {fileID: 0}
+  information: A user can be authenticated in four different ways. They can be authenticated
+    using something they know like a password or PIN. They can use something they
+    possess such as an electronic keycard or smart card. This type of authenticator
+    is referred to as a token. They can use something they are, which is referred
+    to as static biometrics. Examples of static biometrics are recognition by fingerprint,
+    retina, and face. Lastly, they can use something they do, which is referred to
+    as dynamic biometrics. Some examples of dynamic biometrics are voice pattern,
+    handwriting characteristics, and typing rhythm.
