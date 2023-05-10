@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Journal Pickup
   m_EditorClassIdentifier: 
   dialogue:
-  - Yo, testing time, can you pick me up?
+  - You found a journal page!
   responses:
-  - responseText: I'll try!
+  - responseText: Pick up
     dialogueObject: {fileID: 0}
