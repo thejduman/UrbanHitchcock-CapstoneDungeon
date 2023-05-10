@@ -15,16 +15,6 @@ public class InventoryInfo : MonoBehaviour
 
     private ItemData itemData;
     private GameObject journalBox; // it WILL(from code) be instantiated object from prefab
-    
-
-    void Start() 
-    {
-    }
-
-    void Update()
-    {
-
-    }
 
     void RemoveInfo()
     {
@@ -44,11 +34,6 @@ public class InventoryInfo : MonoBehaviour
         }
     }
 
-    public void whenButtonClicked()
-    {
-
-    }
-
     public void ShowInfo(int index)
     {
         Debug.Log("Am I being clicked");
@@ -62,10 +47,14 @@ public class InventoryInfo : MonoBehaviour
         }
         else
         {
-            RemoveInfo();
-            infoBox.SetActive(false);
+            HideInfo();
         }
     }
 
-    
+    public void HideInfo()
+    {
+        RemoveInfo();
+        infoBox.SetActive(false);
+    }
+
 }

@@ -93632,10 +93632,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 273467100221385388, guid: 5e5011154face1141bbe1fa7a8cd8c08, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 438616305761497365, guid: 5e5011154face1141bbe1fa7a8cd8c08, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -93946,22 +93942,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598445893451448887, guid: 5e5011154face1141bbe1fa7a8cd8c08, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4693817063134657883, guid: 5e5011154face1141bbe1fa7a8cd8c08, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4693817063134657883, guid: 5e5011154face1141bbe1fa7a8cd8c08, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4693817063134657883, guid: 5e5011154face1141bbe1fa7a8cd8c08, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4693817063134657883, guid: 5e5011154face1141bbe1fa7a8cd8c08, type: 3}
-      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4693817064258063818, guid: 5e5011154face1141bbe1fa7a8cd8c08, type: 3}
@@ -94052,10 +94032,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4693817064524019784, guid: 5e5011154face1141bbe1fa7a8cd8c08, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4960618317059202137, guid: 5e5011154face1141bbe1fa7a8cd8c08, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -94127,10 +94103,6 @@ PrefabInstance:
     - target: {fileID: 5710032191740172278, guid: 5e5011154face1141bbe1fa7a8cd8c08, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6367166123679148679, guid: 5e5011154face1141bbe1fa7a8cd8c08, type: 3}
-      propertyPath: m_Color.a
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7054214659721972987, guid: 5e5011154face1141bbe1fa7a8cd8c08, type: 3}
       propertyPath: m_AnchorMax.y
@@ -94722,10 +94694,6 @@ PrefabInstance:
       propertyPath: events.Array.data[0].onPickedResponse.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 2059966467}
-    - target: {fileID: 1618958181200054001, guid: ac626625c1ea43e48b9e14ac9c093f8e, type: 3}
-      propertyPath: csvPath
-      value: Assets//Scripts//QuizGame//Dungeon1.csv
-      objectReference: {fileID: 0}
     - target: {fileID: 1618958181200054013, guid: ac626625c1ea43e48b9e14ac9c093f8e, type: 3}
       propertyPath: m_Name
       value: QuestionTrial
@@ -94733,18 +94701,6 @@ PrefabInstance:
     - target: {fileID: 1618958181200054014, guid: ac626625c1ea43e48b9e14ac9c093f8e, type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1618958181200054014, guid: ac626625c1ea43e48b9e14ac9c093f8e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1578
-      objectReference: {fileID: 0}
-    - target: {fileID: 1618958181200054014, guid: ac626625c1ea43e48b9e14ac9c093f8e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1578
-      objectReference: {fileID: 0}
-    - target: {fileID: 1618958181200054014, guid: ac626625c1ea43e48b9e14ac9c093f8e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.0789
       objectReference: {fileID: 0}
     - target: {fileID: 1618958181200054014, guid: ac626625c1ea43e48b9e14ac9c093f8e, type: 3}
       propertyPath: m_LocalPosition.x
