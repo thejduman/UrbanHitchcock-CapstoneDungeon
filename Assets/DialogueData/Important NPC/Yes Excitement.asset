@@ -16,7 +16,7 @@ MonoBehaviour:
   - Well then, that's great! I'm not entirely sure what led you to our town per se,
     but there is a dungeon nearby, if you travel north of here.
   - Ah, but of course, you've probably already tried to do so, and a guard stopped
-    you perhaps? Well, even if you haven't they wouldn't let you through regardless.
+    you perhaps?
   responses:
   - responseText: That's a problem
     dialogueObject: {fileID: 11400000, guid: 0f65be158c7dd7846aebc44028888bb0, type: 2}

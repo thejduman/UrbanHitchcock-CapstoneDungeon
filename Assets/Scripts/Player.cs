@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //DontDestroyOnLoad(gameObject);
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -52,5 +54,25 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = new Vector2(playerDirection.x * playerSpeed, playerDirection.y * playerSpeed);
+    }
+
+    public void SavePosition()
+    {
+        Debug.Log("Saving position");
+        PlayerPrefs.SetFloat("X", playerDirection.x);
+        PlayerPrefs.SetFloat("X", playerDirection.y);
+    }
+
+    public void LoadPosition()
+    {
+        Debug.Log("Loading position");
+        float xpos = PlayerPrefs.GetFloat("X");
+        float ypos = PlayerPrefs.GetFloat("Y");
+        playerDirection = new Vector2(xpos, ypos);
+    }
+
+    public void EnablePlayer()
+    {
+        gameObject.SetActive(true);
     }
 }

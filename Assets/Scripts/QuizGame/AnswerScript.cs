@@ -32,17 +32,20 @@ public class AnswerScript : MonoBehaviour
         {
             if (quizManager.QnA.Count > 0 && quizManager.incorrectans < 4)
             {
+                Debug.Log("Next question");
                 quizManager.generateQuestion();
             }
             else
             {
                 if (quizManager.correctans >= 6 && quizManager.incorrectans < 4)
                 {
+                    Debug.Log("Passing condition met");
                     quizManager.PassingGrade();
                     isFinished = true;
                 }
                 else if (quizManager.incorrectans >= 4)
                 {
+                    Debug.Log("Failing condition met");
                     quizManager.FailingGrade();
                     isFinished = true;
                 }
@@ -51,6 +54,7 @@ public class AnswerScript : MonoBehaviour
         }
         else
         {
+            Debug.Log("Scene transition");
             GameObject.FindWithTag("SceneSwitcher").GetComponent<SceneChanger>().PreviousScene();
         }
         

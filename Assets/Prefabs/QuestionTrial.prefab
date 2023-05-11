@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dbName: URI=file:QuizGame.db
-  csvPath: Assets//Scripts//QuizGame//Dungeon1.csv
+  csvPath: //Scripts//QuizGame//Dungeon1.csvn1.csv
 --- !u!58 &1618958181200054000
 CircleCollider2D:
   m_ObjectHideFlags: 0
