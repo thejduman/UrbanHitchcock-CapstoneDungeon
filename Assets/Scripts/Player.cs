@@ -53,4 +53,19 @@ public class Player : MonoBehaviour
     {
         rb.velocity = new Vector2(playerDirection.x * playerSpeed, playerDirection.y * playerSpeed);
     }
+
+    public void SavePosition()
+    {
+        Debug.Log("Saving position");
+        PlayerPrefs.SetFloat("X", playerDirection.x);
+        PlayerPrefs.SetFloat("X", playerDirection.y);
+    }
+
+    public void LoadPosition()
+    {
+        Debug.Log("Loading position");
+        float xpos = PlayerPrefs.GetFloat("X");
+        float ypos = PlayerPrefs.GetFloat("Y");
+        playerDirection = new Vector2(xpos, ypos);
+    }
 }
