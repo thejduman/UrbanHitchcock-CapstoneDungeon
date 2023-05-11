@@ -13,7 +13,7 @@ public class SceneChanger : MonoBehaviour
 
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);  //Allow this object to persist between scene changes
+        //DontDestroyOnLoad(this.gameObject);  //Allow this object to persist between scene changes
         //sceneHistory.Add(SceneManager.GetActiveScene().name);
     }
 
@@ -23,25 +23,25 @@ public class SceneChanger : MonoBehaviour
 
     public void LoadScene(string newScene)
     {
-        Debug.Log("Started execution of LoadScene");
+        /*Debug.Log("Started execution of LoadScene");
         if (GameObject.FindWithTag("Player") !=  null)
         {
             Debug.Log("Pre-load check");
             GameObject.FindWithTag("Player").GetComponent<Player>().SavePosition();
-        }
+        }*/
         sceneHistory.Add(newScene);
         SceneManager.LoadScene(newScene);
 
-        /*for (int i = 0; i < sceneHistory.Count; i++)
+        for (int i = 0; i < sceneHistory.Count; i++)
         {
             Debug.Log(sceneHistory[i]);
-        }*/
+        }
 
-        if (GameObject.FindWithTag("Player") != null)
+        /*if (GameObject.FindWithTag("Player") != null)
         {
             Debug.Log("Post-load check");
             GameObject.FindWithTag("Player").GetComponent<Player>().LoadPosition();
-        }
+        }*/
 
     }
 
@@ -53,17 +53,17 @@ public class SceneChanger : MonoBehaviour
         bool returnValue = false;
         if (sceneHistory.Count >= 2)  //Checking that we have actually switched scenes enough to go back to a previous scene
         {
-            if (GameObject.FindWithTag("Player") != null)
+            /*if (GameObject.FindWithTag("Player") != null)
             {
                 GameObject.FindWithTag("Player").GetComponent<Player>().SavePosition();
-            }
+            }*/
             returnValue = true;
             sceneHistory.RemoveAt(sceneHistory.Count - 1);
             SceneManager.LoadScene(sceneHistory[sceneHistory.Count - 1]);
-            if (GameObject.FindWithTag("Player") != null)
+            /*if (GameObject.FindWithTag("Player") != null)
             {
                 GameObject.FindWithTag("Player").GetComponent<Player>().LoadPosition();
-            }
+            }*/
         }
 
         return returnValue;
