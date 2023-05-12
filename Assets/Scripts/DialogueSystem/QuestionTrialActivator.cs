@@ -5,7 +5,8 @@ using System.Collections.Generic;
 
 public class QuestionTrialActivator : QuizDatabase//, IInteractable
 {
-    public String csvPath;
+    public string csvPath;
+    private string workingDirectory = Environment.CurrentDirectory;
     //private QuizDatabase qdb;
 
     SceneChanger sceneChanger;
@@ -37,7 +38,8 @@ public class QuestionTrialActivator : QuizDatabase//, IInteractable
         //qdb.OpenCSV(csvPath);
         CreateDB();
         ClearDB();
-        OpenCSV(csvPath);
+        Debug.Log("Interact: " + workingDirectory + csvPath);
+        OpenCSV(workingDirectory + csvPath);
         GameObject.FindWithTag("SceneSwitcher").GetComponent<SceneChanger>().LoadScene("QuizGame");
         
         //scenes.LoadScene("QuizGame");

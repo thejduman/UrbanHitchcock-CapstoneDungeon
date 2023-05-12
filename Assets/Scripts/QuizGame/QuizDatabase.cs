@@ -71,6 +71,7 @@ public class QuizDatabase : MonoBehaviour
     protected virtual void OpenCSV(string filepath)
     {
         CreateDB();
+        Debug.Log("OpenCSV:" + filepath);
         var lines = File.ReadAllLines(filepath);
         foreach (var line in lines)
         {

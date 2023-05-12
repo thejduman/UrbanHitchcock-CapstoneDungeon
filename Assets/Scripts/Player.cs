@@ -20,8 +20,9 @@ public class Player : MonoBehaviour
     void Start()
     {
         //DontDestroyOnLoad(gameObject);
-        dialogueUI = FindObjectOfType<DialogueUI>();
         rb = GetComponent<Rigidbody2D>();
+        dialogueUI = FindObjectOfType<DialogueUI>();
+        SceneManager.sceneLoaded += SetDialogueBox;
     }
 
     // Update is called once per frame
@@ -57,23 +58,8 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(playerDirection.x * playerSpeed, playerDirection.y * playerSpeed);
     }
 
-    public void SavePosition()
+   private void SetDialogueBox(Scene scene, LoadSceneMode mode)
     {
-        Debug.Log("Saving position");
-        PlayerPrefs.SetFloat("X", playerDirection.x);
-        PlayerPrefs.SetFloat("X", playerDirection.y);
-    }
-
-    public void LoadPosition()
-    {
-        Debug.Log("Loading position");
-        float xpos = PlayerPrefs.GetFloat("X");
-        float ypos = PlayerPrefs.GetFloat("Y");
-        playerDirection = new Vector2(xpos, ypos);
-    }
-
-    public void EnablePlayer()
-    {
-        gameObject.SetActive(true);
+        dialogueUI = FindObjectOfType<DialogueUI>();
     }
 }
