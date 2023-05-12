@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Problem
   m_EditorClassIdentifier: 
   dialogue:
-  - Exactly. So here, I implore you to take this with you. If you show this tot he
+  - Exactly. So here, I implore you to take this with you. If you show this to the
     guard, they will let you through.
   - I wish you luck on your adventure!
   responses: []

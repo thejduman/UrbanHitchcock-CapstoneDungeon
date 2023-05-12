@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public Animator animator;
 
     public static bool NearInteractable = false;
-    private Vector2 playerDirection;
+    public Vector2 playerDirection;
 
     // Start is called before the first frame update
     void Start()
