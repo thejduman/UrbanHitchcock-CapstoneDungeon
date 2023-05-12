@@ -1,11 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
-public class QuestionTrialActivator : MonoBehaviour, IInteractable
+public class QuestionTrialActivator : QuizDatabase//, IInteractable
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    public string csvPath;
+    private string workingDirectory = Environment.CurrentDirectory;
+    //private QuizDatabase qdb;
+
+    SceneChanger sceneChanger;
+
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && other.TryGetComponent(out Player player)) 
         {
@@ -24,11 +30,18 @@ public class QuestionTrialActivator : MonoBehaviour, IInteractable
                 player.Interactable = null;
             }
         }
-    }
+    }*/
 
-    public void Interact(Player player)
+    public void Interact()
     {
-        Debug.Log("Change scene");
-        SceneManager.LoadScene("QuizGame");
+        //Debug.Log("Change scene");
+        //qdb.OpenCSV(csvPath);
+        CreateDB();
+        ClearDB();
+        Debug.Log("Interact: " + workingDirectory + csvPath);
+        OpenCSV(workingDirectory + csvPath);
+        GameObject.FindWithTag("SceneSwitcher").GetComponent<SceneChanger>().LoadScene("QuizGame");
+        
+        //scenes.LoadScene("QuizGame");
     }
 }

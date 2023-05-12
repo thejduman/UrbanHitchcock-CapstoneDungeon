@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d328143e12da7b40a0aee2635e71592, type: 3}
+  m_Name: Journal 12
+  m_EditorClassIdentifier: 
+  displayName: Journal 12
+  icon: {fileID: 0}
+  information: Client attacks are those in which an adversary attempts to achieve
+    user authentication without access to the remote host or to the intervening communications
+    path.

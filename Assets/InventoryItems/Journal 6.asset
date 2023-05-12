@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d328143e12da7b40a0aee2635e71592, type: 3}
+  m_Name: Journal 6
+  m_EditorClassIdentifier: 
+  displayName: Journal 6
+  icon: {fileID: 21300000, guid: 973905b20e880304fa5869c09e50e9a0, type: 3}
+  information: Symmetric encryption uses only one key (the secret key) to encrypt
+    and decrypt messages. The process of symmetric encryption begins with the plaintext,
+    which is the message to be encrypted. The plaintext is then processed through
+    an encryption algorithm, along with the secret key, to produce the ciphertext.
+    The ciphertext is the encrypted message that can only be decrypted with the secret
+    key.

@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 2bd97077b45419b4496d2ca0b3232df5
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Overworld.unity
+    guid: 90b56e34846fc1046b0267deb512d96e
+  - enabled: 1
+    path: Assets/Scenes/Dark Forest.unity
+    guid: 398bb9bf67f82464390048c460568748
+  - enabled: 1
+    path: Assets/Scenes/Dark Forest 2.unity
+    guid: 83d5768e22a094444804f8f061c9d885
   - enabled: 1
     path: Assets/Scenes/QuizGame.unity
     guid: b8cb4f8825587304f8558a4d77020792

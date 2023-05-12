@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -10,14 +11,18 @@ public class Player : MonoBehaviour
     
     public float playerSpeed;
     private Rigidbody2D rb;
+    public Animator animator;
 
     public static bool NearInteractable = false;
-    private Vector2 playerDirection;
+    public Vector2 playerDirection;
 
     // Start is called before the first frame update
     void Start()
     {
+        //DontDestroyOnLoad(gameObject);
         rb = GetComponent<Rigidbody2D>();
+        dialogueUI = FindObjectOfType<DialogueUI>();
+        SceneManager.sceneLoaded += SetDialogueBox;
     }
 
     // Update is called once per frame
@@ -28,7 +33,11 @@ public class Player : MonoBehaviour
 
         playerDirection = new Vector2(directionX, directionY).normalized;
 
-        if( Input.GetKeyDown(KeyCode.E))
+        animator.SetFloat("Horizontal", playerDirection.x);
+        animator.SetFloat("Vertical", playerDirection.y);
+        animator.SetFloat("Speed", playerDirection.sqrMagnitude);
+
+        if ( Input.GetKeyDown(KeyCode.E))
         {
             if(Interactable != null)
             {
@@ -47,5 +56,10 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = new Vector2(playerDirection.x * playerSpeed, playerDirection.y * playerSpeed);
+    }
+
+   private void SetDialogueBox(Scene scene, LoadSceneMode mode)
+    {
+        dialogueUI = FindObjectOfType<DialogueUI>();
     }
 }

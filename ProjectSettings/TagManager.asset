@@ -4,8 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - HasDialogue
+  - SceneSwitcher
   - QuestionTrial
+  - InventoryManager
+  - Slots
+  - JDescription
+  - HasDialogue
+  - UI
+  - Inventory
   layers:
   - Default
   - TransparentFX

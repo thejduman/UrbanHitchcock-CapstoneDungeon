@@ -8,7 +8,8 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     public void StartGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        GameObject.FindWithTag("SceneSwitcher").GetComponent<SceneChanger>().LoadScene("Overworld");
+        //SceneManager.LoadScene("SampleScene");
         
     }
 

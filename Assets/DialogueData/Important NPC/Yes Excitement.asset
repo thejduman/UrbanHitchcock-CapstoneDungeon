@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db9e7b7108b3264eb566a500d0eb1fa, type: 3}
+  m_Name: Yes Excitement
+  m_EditorClassIdentifier: 
+  dialogue:
+  - Well then, that's great! I'm not entirely sure what led you to our town per se,
+    but there is a dungeon nearby, if you travel north of here.
+  - Ah, but of course, you've probably already tried to do so, and a guard stopped
+    you perhaps?
+  responses:
+  - responseText: That's a problem
+    dialogueObject: {fileID: 11400000, guid: 0f65be158c7dd7846aebc44028888bb0, type: 2}
+  - responseText: I don't want to go
+    dialogueObject: {fileID: 11400000, guid: a06d2969e7b7a634187e5771217de7eb, type: 2}

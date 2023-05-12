@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static bool GameIsPaused = false;
+    public bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+
+
+
 
     // Update is called once per frame
     void Update()
@@ -30,6 +34,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        //inventoryUI.SetActive(true);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -63,7 +68,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        SceneManager.LoadScene("Menu"); //This is meant to call a variable for the menu
+        GameObject.FindWithTag("SceneSwitcher").GetComponent<SceneChanger>().LoadScene("Menu"); //This is meant to call a variable for the menu
         Debug.Log("Loading Menu...");
     }
 
