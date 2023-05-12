@@ -3,14 +3,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 
-public class QuestionTrialActivator : QuizDatabase, IInteractable
+public class QuestionTrialActivator : QuizDatabase//, IInteractable
 {
     public String csvPath;
     //private QuizDatabase qdb;
 
     SceneChanger sceneChanger;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && other.TryGetComponent(out Player player)) 
         {
@@ -29,9 +29,9 @@ public class QuestionTrialActivator : QuizDatabase, IInteractable
                 player.Interactable = null;
             }
         }
-    }
+    }*/
 
-    public void Interact(Player player)
+    public void Interact()
     {
         //Debug.Log("Change scene");
         //qdb.OpenCSV(csvPath);

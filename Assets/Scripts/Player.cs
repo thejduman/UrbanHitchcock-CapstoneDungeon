@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         //DontDestroyOnLoad(gameObject);
+        dialogueUI = FindObjectOfType<DialogueUI>();
         rb = GetComponent<Rigidbody2D>();
     }
 
