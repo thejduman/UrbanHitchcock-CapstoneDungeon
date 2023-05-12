@@ -22,7 +22,7 @@ Urban, Julian, jdu1@hood.edu
 https://github.com/thejduman/UrbanHitchcock-CapstoneDungeon
 
 ## General info
-This project is a video game that is meant to give the player an explorable environment to discover and learn information regarding Cyberse Security
+This project is a video game that is meant to give the player an explorable environment to discover and learn information regarding Cyber Security
 Through the game, players will be quized according to the knowledge they've gathered throughout the world. They will then proceed onwards until eventually
 passing all of our "Question Trials" and clearing the game.
 
@@ -67,14 +67,17 @@ Project is created with:
 * Unity Hub Version 3.4.2
 * Unity Editor Version: 2021.3.18f1
 * VScode
-* SQLite 
-* Microsoft Excel 
+* SQLite  
 * C#
 
 
 	
 ## Setup and Installation Guide
-To run this project, either clone it from the repository:
+To run this project, you will need a Windows computer with DirectX and Microsoft .NET installed. The zip file containing the build can be downloaded here: https://github.com/thejduman/UrbanHitchcock-CapstoneDungeon/raw/main/Cybersecurity%20Exploration%20Game%20v.1.0.zip
+
+Once the zip file is downloaded, extract the contents and run UrbanHitchcock-CapstoneDungeon.exe.
+
+To download the source code, either clone it from the repository:
 
 ```
 $ git clone --main dev --single-branch https://github.com/thejduman/UrbanHitchcock-CapstoneDungeon.git
