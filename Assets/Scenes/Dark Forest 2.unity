@@ -833,7 +833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1618958181200054001, guid: ac626625c1ea43e48b9e14ac9c093f8e, type: 3}
       propertyPath: csvPath
-      value: /Assets/Scripts/QuizGame/Dungeon2.csv
+      value: /QuizData/Dungeon2.csv
       objectReference: {fileID: 0}
     - target: {fileID: 1618958181200054013, guid: ac626625c1ea43e48b9e14ac9c093f8e, type: 3}
       propertyPath: m_Name

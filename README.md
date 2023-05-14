@@ -42,6 +42,8 @@ passing all of our "Question Trials" and clearing the game.
 
 * ProjectSettings - Contains all the Project Settings for Unity and tracks them accordingly
 
+* QuizData - Contains the .csv files for the quiz game questions
+
 #### Assets Continued
 
 * Animation: Features the Animation Settings for objects, particularly the player character
@@ -73,7 +75,7 @@ Project is created with:
 
 	
 ## Setup and Installation Guide
-To run this project, you will need a Windows computer with DirectX and Microsoft .NET installed. The zip file containing the build can be downloaded here: https://github.com/thejduman/UrbanHitchcock-CapstoneDungeon/raw/main/Cybersecurity%20Exploration%20Game%20v.1.0.zip
+To run this project, you will need a Windows computer with DirectX and Microsoft .NET installed. The zip file containing the latest build can be downloaded here: https://github.com/thejduman/UrbanHitchcock-CapstoneDungeon/raw/main/Cybersecurity%20Exploration%20Game%20v.1.1.zip
 
 Once the zip file is downloaded, extract the contents and run UrbanHitchcock-CapstoneDungeon.exe.
 
